@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}
+    首页
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/css/index.css">
+    <script>
+        function out()
+		{
+			if(window.event.toElement.id!="menu"&&window.event.toElement.id!="link"){
+				menu.style.visibility="hidden";
+			}
+		}
+    </script>
+{% endblock %}
+
+{% block index %}
+    <div class="main" onmouseout="out()">
+        <ul>
+            <li onmouseover="menu.style.visibility='visible'"><img src="/static/images/tx1.jpg"></li>
+            <li>欢迎：{{ request.COOKIES.username }}</li>
+            <li><a href="/exit/" title="点击退出当前系统">退出</a></li>
+        </ul>
+        <div id="menu">
+			<ul>
+                <li><a id="link" href="#">账单</a></li>
+                <li><a id="link" href="#">设置</a></li>
+                <li><a id="link" href="#">个人信息</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="index">
+        <p>首页</p>
+    </div>
+{% endblock %}

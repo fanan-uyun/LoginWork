@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    登录页面
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/css/login.css">
+{% endblock %}
+
+{% block container %}
+    <div class="left">
+        <div class="header">
+          <h2 class="animation a1">登录</h2>
+          <h4 class="animation a2">请使用用户名及密码登入你的帐户</h4>
+        </div>
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+          <input type="text" class="form-field animation a3" name="username" placeholder="请输入用户名">
+          <input type="password" class="form-field animation a4" name="password" placeholder="请输入密码">
+          <p class="animation a5"><a href="#">忘记密码</a></p>
+          <button class="animation a6">登录</button>
+        </form>
+        <p style="color: red;font-size: 16px">{{ result.data }}</p>
+  </div>
+
+
+{% endblock %}

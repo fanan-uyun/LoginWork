@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+    注册页面
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="/static/css/register.css">
+    <script src="/static/js/jquery.min.js"></script>
+{% endblock %}
+
+{% block container %}
+    <div class="left">
+        <div class="header">
+          <h2 class="animation a1">注册</h2>
+          <h4 class="animation a2">请输入用户名及密码进行注册</h4>
+        </div>
+        <form action="" method="post" class="form">
+            {% csrf_token %}
+          <input type="text" id="id_username" class="form-field animation a3" name="username" placeholder="请输入用户名">
+          <input type="password" class="form-field animation a4" name="password" placeholder="请输入密码">
+          <p class="animation a5"><a href="#">忘记密码</a></p>
+          <button id="submit" class="animation a6">注册</button>
+        </form>
+{#        <p style="color: red;font-size: 16px">{{ result.data }}</p>#}
+        <p style="color: orangered;font-size: 16px" id="sign"></p>
+    </div>
+
+    <script>
+        $("#id_username").blur(
+            function () {
+                var username = $("#id_username").val();
+                var csrfmiddlewaretoken = '{{ csrf_token }}';
+                var url = "/ajax/";
+                send_data = {
+                    "username":username,
+                    "csrfmiddlewaretoken":csrfmiddlewaretoken
+                };
+                $.ajax(
+                    {
+                        url: url,
+                        type: "post",
+                        data: send_data,
+                        success: function (data) {
+                            var stat = data.status;
+                            $("#sign").text(data.data);
+                            if(stat=="0"){
+                                $("#submit").attr("disabled",true);
+                                document.getElementById('submit').style.color="#AFBABF";
+                            }else {
+                                $("#submit").attr("disabled",false);
+                                document.getElementById('submit').style.color="#FFFFFF";
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    }
+                )
+            }
+        )
+    </script>
+
+{% endblock %}
