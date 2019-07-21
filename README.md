@@ -16,6 +16,7 @@
 3、视图函数与对应路由的编写（包括注册、登录、首页主要功能显示，后续功能实现优化了登录校验装饰器实现、注册登录密码加密、前端ajax和后端用户名重复校验、cookie和session的下发校验及删除实现用户及网站的安全性）
 <br>
 <br>
+
 **首页截图**
 ![首页](https://github.com/py304/LoginWork/blob/master/images/showindex.jpg)
 -----------
@@ -39,7 +40,6 @@
 **ajax用户名校验截图**
 ![ajax](https://github.com/py304/LoginWork/blob/master/images/ajax.jpg)
 -----------
-
 <br>
 
 **视图函数完整代码展示**
