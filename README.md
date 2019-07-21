@@ -17,13 +17,19 @@
 <br>
 <br>
 **首页截图**
-
+![首页](https://github.com/py304/LoginWork/blob/master/images/showindex.jpg)
+-----------
 **视图代码部分截图**
-
+![视图](https://github.com/py304/LoginWork/blob/master/images/view.jpg)
+-----------
 **登录页面截图**
-
+![登录](https://github.com/py304/LoginWork/blob/master/images/showlogin.jpg)
+-----------
 **注册页面截图**
-
+![注册](https://github.com/py304/LoginWork/blob/master/images/showzc.jpg)
+-----------
 **ajax用户名校验截图**
+![注册](https://github.com/py304/LoginWork/blob/master/images/ajax.jpg)
+-----------
 
 
